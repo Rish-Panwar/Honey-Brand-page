@@ -17,13 +17,13 @@ const App = () => {
     navigator.geolocation.getCurrentPosition(async (position) => {
       const { latitude, longitude } = position.coords;
       // You can use these coordinates to fetch the location or display it
-      console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+      //console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
 
       const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
       try{
         const location = await axios.get(url);
         const exactLocation = location.data.address;
-        console.log('Location:', exactLocation);
+        //console.log('Location:', exactLocation);
         setLocation(exactLocation);
         setOpenDropdown(false); // Close the dropdown after fetching location
       }

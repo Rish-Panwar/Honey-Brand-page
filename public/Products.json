@@ -1,0 +1,201 @@
+{
+    "honeyProducts": [
+        {
+            "id": "acaciaHoney",
+            "title": "Acacia Honey",
+            "price": 500,
+            "unit": "kg",
+            "category": "honey",
+            "description": "Acacia Honey is a premium, raw organic honey product from Golden Drop.",
+            "image": "/assets/acacia-honey.jpg"
+        },
+        {
+            "id": "cloverHoney",
+            "title": "Clover Honey",
+            "price": 400,
+            "unit": "kg",
+            "category": "honey",
+            "description": "Clover Honey is a light, mild honey with a sweet flavor.",
+            "image": "/assets/clover-honey.jpg"
+        },
+        {
+            "id": "firewoodHoney",
+            "title": "Firewood Honey",
+            "price": 150,
+            "unit": "kg",
+            "category": "honey",
+            "description": "Firewood Honey is a unique honey with a smoky flavor, perfect for marinades.",
+            "image": "/assets/firewood-honey.jpg"
+        },
+        {
+            "id": "himalayanHoney",
+            "title": "Himalayan Honey",
+            "price": 250,
+            "unit": "kg",
+            "category": "honey",
+            "description": "Himalayan Honey is a rare and exquisite honey, known for its rich flavor and health benefits.",
+            "image": "/assets/himalayan-honey.jpg"
+        },
+        {
+            "id": "sageHoney",
+            "title": "Sage Honey",
+            "price": 180,
+            "unit": "kg",
+            "category": "honey",
+            "description": "Sage Honey is known for its herbal notes and is great for soothing teas.",
+            "image": "/assets/sage-honey.jpg"
+        },
+        {
+            "id": "wildflowerHoney",
+            "title": "Wildflower Honey",
+            "price": 220,
+            "unit": "kg",
+            "category": "honey",
+            "description": "Wildflower Honey is a delightful blend of nectar from various flowers, offering a unique taste.",
+            "image": "/assets/wildflower-honey.jpg"
+        },
+        {
+            "id": "sourwoodHoney",
+            "title": "Sourwood Honey",
+            "price": 1130,
+            "unit": "kg",
+            "category": "honey",
+            "description": "Sourwood Honey is a rare and sought-after honey, known for its distinctive flavor.",
+            "image": "/assets/sourwood-honey.jpg"
+        },
+        {
+            "id": "tupeloHoney",
+            "title": "Tupelo Honey",
+            "price": 300,
+            "unit": "kg",
+            "category": "honey",
+            "description": "Tupelo Honey is a premium honey known for its unique flavor and light color.",
+            "image": "/assets/tupelo-honey.jpg"
+        }
+    ],
+    "foodProducts": [
+        {
+            "id": "pancake",
+            "title": "Honey Dipped Pancakes",
+            "price": 500,
+            "category": "food",
+            "description": "Fluffy pancakes drizzled with our finest honey.",
+            "image": "/assets/food-1.jpg"
+        },
+        {
+            "id": "dryFruits",
+            "title": "Dry Fruits",
+            "price": 180,
+            "category": "food",
+            "description": "A mix of organic dried fruits, perfect for snacking.",
+            "image": "/assets/food-2.jpg"
+        },
+        {
+            "id": "milk",
+            "title": "Milk",
+            "price": 300,
+            "category": "food",
+            "description": "Fresh organic milk, rich and creamy.",
+            "image": "/assets/food-3.jpg"
+        },
+        {
+            "id": "honeyCake",
+            "title": "Honey Cake",
+            "price": 300,
+            "category": "food",
+            "description": "A moist and delicious cake made with our finest honey.",
+            "image": "/assets/food-4.jpg"
+        },
+        {
+            "id": "honeyToast",
+            "title": "Honey Toast",
+            "price": 200,
+            "category": "food",
+            "description": "Toasted bread topped with a generous layer of honey.",
+            "image": "/assets/food-5.jpg"
+        },
+        {
+            "id": "berries",
+            "title": "Honey Berries",
+            "price": 250,
+            "category": "food",
+            "description": "Fresh berries drizzled with our finest honey.",
+            "image": "/assets/food-6.jpg"
+        },
+        {
+            "id": "honeybarfi",
+            "title": "Honey Barfi",
+            "price": 100,
+            "category": "food",
+            "description": "A delicious sweet made with honey nectar.",
+            "image": "/assets/honey-barfi.jpg"
+        },
+        {
+            "id": "honeydrizzle",
+            "title": "Honey Drizzle",
+            "price": 100,
+            "category": "food",
+            "description": "A convenient squeeze bottle for drizzling honey.",
+            "image": "/assets/honey-drizzle-1.jpg"
+        }
+        
+    ],
+    "shopProducts": [
+            {
+                "id": "honeycomb",
+                "title": "Honeycomb",
+                "price": 150,
+                "category": "food",
+                "description": "Delicious honeycomb straight from the hive.",
+                "image": "/assets/honey-comb-1.jpg"
+            },
+            {
+                "id": "woodhoneystick",
+                "title": "Wooden Honey Stick",
+                "price": 200,
+                "category": "food",
+                "description": "Natural wooden stick for easy honey drizzling.",
+                "image": "/assets/honey-stick-1.jpg"
+            },
+            {
+                "id": "cinnamonstick",
+                "title": "Cinnamon Stick",
+                "price": 200,
+                "category": "food",
+                "description": "A natural cinnamon stick for adding flavor to your honey.",
+                "image": "/assets/honey-stick-2.jpg"
+            },
+            {
+                "id": "honeyjar",
+                "title": "Honey Jar",
+                "price": 300,
+                "category": "food",
+                "description": "A beautifully crafted jar to store your honey.",
+                "image": "/assets/honey-jar-3.jpg"
+            },            
+            {
+                "id": "honeysoap",
+                "title": "Honey Soap",
+                "price": 250,
+                "category": "food",
+                "description": "Natural soap infused with the goodness of honey.",
+                "image": "/assets/honey-soap.jpg"
+            },
+            {
+                "id": "honeycandle",
+                "title": "Honey Candle",
+                "price": 350,
+                "category": "food",
+                "description": "A soothing candle made with pure honey wax.",
+                "image": "/assets/honey-candle-4.jpg"
+            },
+            {
+                "id": "honeybeeswax",
+                "title": "Beeswax",
+                "price": 500,
+                "category": "food",
+                "description": "Pure beeswax for various uses, from candles to cosmetics.",
+                "image": "/assets/honey-wax-4.jpg"
+            }
+    ]
+}
