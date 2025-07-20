@@ -1,5 +1,7 @@
 @import 'tailwindcss';
-
+ body {
+  @apply bg-gradient-to-r from-amber-100 via-yellow-200 to-amber-100 min-h-screen;
+}
 /* Adjust the avatar box */
 
 .cl-avatarBox {
@@ -7,4 +9,9 @@
   height: 2.5rem;
   border-radius: 50%;
   overflow: hidden;
+}
+
+/* input color */
+input{
+  @apply bg-white accent-orange-500  border-gray-300 text-[#333]
 }

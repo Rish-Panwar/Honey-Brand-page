@@ -7,6 +7,7 @@ import Contact from './pages/Contact'
 import Cart from './pages/Cart'
 import Navbar from './components/Navbar'
 import axios from 'axios'
+import Footer from './components/Footer'
 
 const App = () => {
   const [location, setLocation] = useState(null);
@@ -47,6 +48,7 @@ const App = () => {
         <Route path='/contact' element={<Contact />} />
         <Route path='/cart' element={<Cart />} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   )
 }
