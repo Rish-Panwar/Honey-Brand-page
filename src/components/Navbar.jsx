@@ -1,6 +1,5 @@
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 import { MapPin, ShoppingCartIcon } from 'lucide-react'
-import { useState } from 'react'
 import { CgClose } from 'react-icons/cg';
 import { FaCaretDown } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom'
@@ -17,7 +16,7 @@ const Navbar = ({ location, getLocation, openDropdown, setOpenDropdown }) => {
         {/* logo section */}
         <div className="flex gap-7 items-center">
           <Link to="/" className="flex items-center space-x-2">
-            <img src="/public/assets/logos/honey-jar.png" alt="honey jar logo" className='h-10' />
+            <img src="/assets/logos/honey-jar.png" alt="honey jar logo" className='h-10' />
             <h1 className="text-3xl font-bold text-white"><span className="text-amber-300 font-serif">G</span>olden <span className="text-amber-300 font-serif">D</span>rop</h1>
           </Link>
           {/* location dropdown */}

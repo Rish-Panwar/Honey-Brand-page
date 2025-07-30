@@ -4,7 +4,6 @@ import { getData } from '../Context/DataContext'
 const FilterSection = ({ filters, updateFilter }) => {
   const { categoryData } = getData() || {}
   const { search, category, priceRange } = filters;
-  console.log("Categories:", categoryData);
 
   return (
     <div className='bg-amber-100 mt-10 p-4  rounded-md h-max'>

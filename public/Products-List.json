@@ -3,7 +3,7 @@
         {
             "id": "acaciaHoney",
             "title": "Acacia Honey",
-            "price": 500,
+            "price": 1200,
             "unit": "kg",
             "category": "Honey Products",
             "description": "Acacia Honey is a premium, raw organic honey product from Golden Drop.",
@@ -13,7 +13,7 @@
         {
             "id": "cloverHoney",
             "title": "Clover Honey",
-            "price": 400,
+            "price": 2000,
             "unit": "kg",
             "category": "Honey Products",
             "description": "Clover Honey is a light, mild honey with a sweet flavor.",
@@ -23,7 +23,7 @@
         {
             "id": "firewoodHoney",
             "title": "Firewood Honey",
-            "price": 150,
+            "price": 1500,
             "unit": "kg",
             "category": "Honey Products",
             "description": "Firewood Honey is a unique honey with a smoky flavor, perfect for marinades.",
@@ -33,7 +33,7 @@
         {
             "id": "himalayanHoney",
             "title": "Himalayan Honey",
-            "price": 250,
+            "price": 2500,
             "unit": "kg",
             "category": "Honey Products",
             "description": "Himalayan Honey is a rare and exquisite honey, known for its rich flavor and health benefits.",
@@ -43,7 +43,7 @@
         {
             "id": "sageHoney",
             "title": "Sage Honey",
-            "price": 180,
+            "price": 1800,
             "unit": "kg",
             "category": "Honey Products",
             "description": "Sage Honey is known for its herbal notes and is great for soothing teas.",
@@ -53,7 +53,7 @@
         {
             "id": "wildflowerHoney",
             "title": "Wildflower Honey",
-            "price": 220,
+            "price": 2200,
             "unit": "kg",
             "category":"Honey Products",
             "description": "Wildflower Honey is a delightful blend of nectar from various flowers, offering a unique taste.",
@@ -73,7 +73,7 @@
         {
             "id": "tupeloHoney",
             "title": "Tupelo Honey",
-            "price": 300,
+            "price": 2400,
             "unit": "kg",
             "category":"Honey Products",
             "description": "Tupelo Honey is a premium honey known for its unique flavor and light color.",

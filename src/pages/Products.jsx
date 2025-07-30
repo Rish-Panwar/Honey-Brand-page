@@ -3,7 +3,8 @@ import { getData } from "../Context/DataContext";
 import FilterSection from "../components/FilterSection";
 import ProductCard from "../components/ProductCard";
 import Pagination from "../components/Pagination";
-
+import Lottie from "lottie-react";
+import notfound from "../assets/notfound.json"
 const Products = () => {
   const { data, fetchAllData } = getData() || {};
 
@@ -22,7 +23,7 @@ const Products = () => {
   });
   const { search, category, priceRange } = filters;
   const updateFilter = (key, value) => {
-      console.log("Updated:", key, value); // DEBUG
+    console.log("Updated:", key, value); // DEBUG
     setFilters(prev => ({ ...prev, [key]: value }));
   };
   const filteredData = allProducts?.filter((item) =>
@@ -32,11 +33,13 @@ const Products = () => {
   )
   // Pagination 
   const [page, setPage] = useState(1)
-  const pageHandler = (selectedPage)=>{
+  const pageHandler = (selectedPage) => {
     setPage(selectedPage)
   }
+  const dynamicPage = Math.ceil(filteredData?.length / 8)
   useEffect(() => {
     fetchAllData();
+    window.scrollTo(0,0)
   }, []);
 
 
@@ -47,18 +50,25 @@ const Products = () => {
         {allProducts.length > 0 ? (
           <div className="flex gap-8">
             <FilterSection filters={filters} updateFilter={updateFilter} />
-            <div className="grid grid-cols-4 gap-7 mt-10 bg-amber-100">
-              {filteredData?.slice(page*8-8, page*8).map((product, index) => {
-                return <ProductCard key={index} product={product} />
-              })}
+            <div className="flex flex-col items-center justify-between mt-10 w-full">
+              {/* Product Grid */}
+              <div className="grid grid-cols-4 gap-7 bg-amber-100 w-full">
+                {filteredData?.slice(page * 8 - 8, page * 8).map((product, index) => (
+                  <ProductCard key={index} product={product} />
+                ))}
+              </div>
+
+              {/* Pagination */}
+              <Pagination
+                pageHandler={pageHandler}
+                page={page}
+                dynamicPage={dynamicPage}
+              />
             </div>
-            <Pagination pageHandler={pageHandler} page={page}/>
           </div>
         ) : (
-          <div className="flex items-center justify-center h-[400px]">
-            <video muted autoPlay loop>
-              <source src="/assets/loading.webm" type="video/webm" />
-            </video>
+          <div className="flex items-center justify-center md:h-[600px] md:w-[900px] mt-10">
+            <Lottie animationData={notfound} classID="w-[500px]" />          
           </div>
         )}
       </div>
