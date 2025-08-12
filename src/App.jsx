@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Products from './pages/Products'
@@ -48,7 +48,7 @@ const App = () => {
         <Route path='/products/:id' element={<SingleProduct />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/cart' element={<Cart />} />
+        <Route path='/cart' element={<Cart location={location} getLocation={getLocation} />} />
       </Routes>
       <Footer/>
     </BrowserRouter>

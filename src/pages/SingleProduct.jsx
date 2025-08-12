@@ -52,6 +52,7 @@ const SingleProduct = () => {
                         <div className="flex items-center gap-4"><QuantitySelector product={SingleProduct}/></div>                                                                                
                         </div>
                         
+                        
                     </div>
                 </div> :
                     <div className="flex items-center justify-center md:h-[600px] md:w-[900px] mt-10">
