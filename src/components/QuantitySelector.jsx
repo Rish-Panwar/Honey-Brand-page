@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { useCart } from "../Context/CartContext";
+import { AnimatedSubscribeButton } from "@/components/magicui/animated-subscribe-button";
+import { BaggageClaim } from "lucide-react";
+
+
 
 const QuantitySelector = ({ product}) => {
     const { addToCart } = useCart();
@@ -108,14 +112,10 @@ const QuantitySelector = ({ product}) => {
       <div className="mt-2 text-lg font-semibold text-[#DC3C22]">
         Price: ₹{totalPrice}
       </div>
-
-      <button
-        onClick={() => addToCart({...product, selectedWeight: isHoney ? selectedWeight : undefined, units})}
-        className="bg-cover bg-center text-white font-semibold px-3 py-2 rounded-full cursor-pointer mt-3 flex gap-2"
-        style={{ backgroundImage: "url(/assets/button-bee-2.jpg)" }}
-      >
-        <IoCartOutline className="w-6 h-6" /> Add To Cart
-      </button>
+      <AnimatedSubscribeButton onClick={() => addToCart(product)} className="text-white text-center w-38 font-semibold px-3 py-2 rounded-full cursor-pointer mt-3 flex gap-2" style={{ backgroundImage: "url(/assets/button-bee-2.jpg)" }}>
+        <span className="flex items-center gap-2"><IoCartOutline className="w-6 h-6" />Add to cart</span>
+        <span className="flex items-center gap-2"><BaggageClaim className="w-6 h-6" />Added</span>
+      </AnimatedSubscribeButton>      
     </div>
   );
 };

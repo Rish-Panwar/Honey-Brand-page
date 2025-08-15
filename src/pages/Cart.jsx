@@ -7,11 +7,16 @@ import { GiShoppingBag } from 'react-icons/gi'
 import { useUser } from '@clerk/clerk-react'
 import { DetailedPrice } from '../components/DetailedPrice'
 import { ShippingDetail } from '../components/ShippingDetail'
+import { useNavigate } from 'react-router-dom'
+import Lottie from 'lottie-react'
+import empty from "../assets/empty.json"
+
 
 
 const Cart = ({ location, getLocation }) => {
   const { cartItem, updateQuantity, deleteItem } = useCart()
 
+  const navigate = useNavigate()
   // User Information
   const { user } = useUser()
 
@@ -21,7 +26,7 @@ const Cart = ({ location, getLocation }) => {
   const grandTotal = totalPrice + handlingCharge
 
   return (
-    <div className='mt-10 max-w-6xl mx-auto mb-5'>
+    <div className='mt-10 max-w-6xl mx-auto mb-5 px-4 md:px-0'>
       {cartItem.length > 0 ? <div>
         <h1 className="font-bold text-2xl text-[#D96F32]">Cart Item</h1>
         <div className="">
@@ -31,7 +36,7 @@ const Cart = ({ location, getLocation }) => {
                 <div className="flex items-center gap-4">
                   <img src={item.image} alt={item.title} className='w-20 h-20 rounded-md' />
                   <div>
-                    <h1 className="w-[300px] line-clamp-2 text-amber-500">{item.title}</h1>
+                    <h1 className="md:w-[300px] line-clamp-2 text-amber-500">{item.title}</h1>
                     <p className="text-[#EA2F14] font-semibold">₹{item.price}</p>
                     {item.category === "Honey Products" && (
                       <div className="text-sm text-amber-700">
@@ -44,7 +49,7 @@ const Cart = ({ location, getLocation }) => {
                     )}
                   </div>
                 </div>
-                <div className="bg-amber-300 text-white flex gap-4 p-2 rounded-md font-bold text-xl">
+                <div className="bg-amber-300 text-white flex gap-4 p-2 rounded-md font-bold text-xl mx-1 md:mx-0">
                   <button onClick={() => updateQuantity(item.id, 'decrement')} className='cursor-pointer hover:text-amber-800'>-</button>
                   <span>{item.quantity}</span>
                   <button onClick={() => updateQuantity(item.id, 'increment')} className='cursor-pointer hover:text-amber-800'>+</button>
@@ -55,7 +60,7 @@ const Cart = ({ location, getLocation }) => {
               </div>
             })}
           </div>
-          <div className="grid grid-cols-2 gap-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20">
             <div className="bg-amber-100 border-gray-100 shadow-xl rounded-md p-7 mt-4 space-y-2">
               <h1 className="text-[#D96F32] font-bold text-xl">Delivery Details</h1>
               <div className="flex flex-col space-y-1">
@@ -124,7 +129,12 @@ const Cart = ({ location, getLocation }) => {
             </div>
           </div>
         </div>
-      </div> : <div>Cart is Empty</div>}
+      </div> : <div className='flex flex-col justify-center items-center h-[600px]'>
+        <h1 className='text-5xl font-bold text-[#74512D]'>Your Cart is Empty</h1>
+        <Lottie animationData={empty} className="w-[400px] bg-none" autoPlay loop muted playsInline />
+        <p className='text-gray-500'>Add items to your cart to see them here.</p>
+        <button onClick={() => navigate("/products")} className="bg-[#939B62] text-white px-3 py-2 rounded-full cursor-pointer mt-4">Continue Shopping</button>
+      </div>}
     </div>
   )
 }

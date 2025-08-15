@@ -3,8 +3,8 @@
 import { cn } from "@/lib/utils";
 import { HTMLMotionProps } from "motion/react";
 import { AnimatePresence, motion } from "motion/react";
-import React, { useEffect, useState } from "react";
-
+import { useEffect, useState } from "react";
+import React from "react";
 interface AnimatedSubscribeButtonProps
   extends Omit<HTMLMotionProps<"button">, "ref"> {
   subscribeStatus?: boolean;

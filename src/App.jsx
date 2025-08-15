@@ -9,10 +9,13 @@ import Navbar from './components/Navbar'
 import axios from 'axios'
 import Footer from './components/Footer'
 import SingleProduct from './pages/SingleProduct'
+import { useCart } from './Context/CartContext'
 
 const App = () => {
   const [location, setLocation] = useState(null);
   const [openDropdown, setOpenDropdown] = useState(false);
+
+  const {cartItem, setCartItem} = useCart(); // Initialize local storage for cart items
 
   // Function to get the user's location
   const getLocation = async () => {
@@ -38,6 +41,18 @@ const App = () => {
   useEffect(() => {
     getLocation();
   }, [])
+
+  //Load cart from local storage on initial render
+  useEffect(()=>{
+    const storedCart = localStorage.getItem('cartItem')
+    if (storedCart) {
+      setCartItem(JSON.parse(storedCart));
+    }
+  },[])
+  // Save cart to local storage on change
+  useEffect(()=>{
+    localStorage.setItem('cartItem', JSON.stringify(cartItem));
+  },[cartItem]) 
 
   return (
     <BrowserRouter>

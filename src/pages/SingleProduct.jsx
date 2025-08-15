@@ -36,17 +36,17 @@ const SingleProduct = () => {
         <>
             {
                 SingleProduct ? <div className='px-4 pb-4 md:px-0 mt-15 mb-10'>                   
-                    <div className="max-w-5xl mx-auto md:p-6 grid grid-cols-2 gap-10">
+                    <div className="max-w-5xl mx-auto md:p-6 grid grid-cols-1 md:grid-cols-2 gap-10">
                         {/* Product Image */}
                         <div className="w-fit">
                             <img src={SingleProduct.image} alt={SingleProduct.title} className='rounded-2xl w-full object-cover ' />
                         </div>
                         {/* product details */}
                         <div className="flex flex-col gap-6 py-6">
-                            <h1 className="md:text-3xl font-bold text-[#DC3C22]">{SingleProduct.title}</h1>
+                            <h1 className="md:text-3xl text-2xl font-bold text-[#DC3C22]">{SingleProduct.title}</h1>
                             <div className="text-orange-400">{/*{SingleProduct.category} */}
                                 <p className="text-xl text-[#DC3C22] font-bold">₹{SingleProduct.price}/{SingleProduct.unit}</p>
-                                <p className=" text-amber-500">{SingleProduct.description}</p>
+                                <p className=" text-amber-500 md:text-xl mt-2 ">{SingleProduct.description}</p>
                             </div>   
                             {/* Quantity selecter */}
                         <div className="flex items-center gap-4"><QuantitySelector product={SingleProduct}/></div>                                                                                

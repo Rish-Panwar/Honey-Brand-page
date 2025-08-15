@@ -1,29 +1,39 @@
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
-import { MapPin, ShoppingCartIcon } from 'lucide-react'
+import { ListCollapse, Logs, MapPin, ShoppingCartIcon } from 'lucide-react'
 import { CgClose } from 'react-icons/cg';
 import { FaCaretDown } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom'
-import { useCart} from "../Context/CartContext";
+import { useCart } from "../Context/CartContext";
+import { useState } from 'react';
+import ResponsiveMenu from './ResponsiveMenu';
 
 
 const Navbar = ({ location, getLocation, openDropdown, setOpenDropdown }) => {
-  const {cartItem} = useCart()
+
+  // Toggle Dropdown for navbar
+  const [openNav, setOpenNav] = useState(false);
+
+  const { cartItem } = useCart()
   // Function to handle location click
   const toggleDropdown = () => {
     setOpenDropdown(!openDropdown);
   };
 
   return (
-    <div className="bg-cover bg-center py-2 shadow-md" style={{backgroundImage: "url('/assets/background.jpg')"}}>
-      <div className="max-w-6xl mx-auto flex justify-between items-center py-4">
+  <div className="bg-cover bg-center py-2 shadow-md px-4 md:px-0" style={{ backgroundImage: "url('/assets/background.jpg')" }}>
+      {/* Light blur overlay for main content when menu is open */}
+      {openNav && (
+        <div className="fixed inset-0 z-40 bg-black/10 backdrop-blur-sm transition-all duration-300" />
+      )}
+      <div className={`max-w-6xl mx-auto flex justify-between items-center py-4 transition-all duration-300 ${openNav ? 'relative z-50' : ''}`}> 
         {/* logo section */}
         <div className="flex gap-7 items-center">
-          <Link to="/" className="flex items-center space-x-2">
-            <img src="  /assets/logos/honey-jar.png" alt="honey jar logo" className='h-10' />
-            <h1 className="text-3xl font-bold text-white"><span className="text-amber-300 font-serif">G</span>olden <span className="text-amber-300 font-serif">D</span>rop</h1>
+          <Link to="/" className={`flex items-center space-x-2 transition-all duration-300 ${openNav ? 'blur-sm' : ''}`}>
+            <img src="  /assets/logos/honey-jar.png" alt="honey jar logo" className='h-7 md:h-10' />
+            <h1 className="text-xl font-semibold text-white md:text-3xl md:font-bold"><span className="text-amber-300 font-serif">G</span>olden <span className="text-amber-300 font-serif">D</span>rop</h1>
           </Link>
           {/* location dropdown */}
-          <div className="flex cursor-pointer text-gray-700 items-center">
+          <div className="md:flex cursor-pointer text-gray-700 items-center hidden">
             <MapPin className="h-7 w-7 text-amber-500" />
             <span className='text-sm text-white'>{location ? <div className='flex flex-col'>
               <p>{location.county}, {location.state}</p>
@@ -36,8 +46,29 @@ const Navbar = ({ location, getLocation, openDropdown, setOpenDropdown }) => {
             <button onClick={getLocation} className='bg-yellow-500 text-white rounded-md px-4 py-2 cursor-pointer hover:bg-yellow-600'>Detect my Location</button>
           </div> : null}
         </div>
+        {/* Mobile Cart and Toggle: Now scrolls with navbar */}
+        <div className="md:hidden absolute top-4 right-4 flex items-center gap-3 transition-all duration-300 w-max">
+          <Link
+            to={'/cart'}
+            className={`relative bg-black/30 rounded-full p-2 transition-all duration-300 ${openNav ? 'translate-x-[-16rem]' : ''}`}
+            style={{ pointerEvents: 'auto' }}
+          >
+            <ShoppingCartIcon className="h-7 w-7 text-white" />
+            <span className="absolute -top-2 -right-2 bg-gradient-to-r from-yellow-500 to-orange-400 text-white text-xs font-bold rounded-full px-1">{cartItem.length}</span>
+          </Link>
+          {!openNav && (
+            <button
+              onClick={() => setOpenNav(true)}
+              className="text-white text-3xl p-2 rounded-full bg-black/30 hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+              aria-label="Open menu"
+              style={{ pointerEvents: 'auto' }}
+            >
+              <ListCollapse />
+            </button>
+          )}
+        </div>
         {/* Menu section */}
-        <nav className="flex items-center gap-7  text-white">
+        <nav className="md:flex items-center gap-7  text-white hidden">
           <ul className="space-x-4 text-xl font-semibold">
             <NavLink to="/" className={({ isActive }) => `${isActive ? 'border-b-3 transition-all duration-300 ease-in-out border-white' : 'text-amber-300'} cursor-pointer`}>Home</NavLink>
             <NavLink to="/products" className={({ isActive }) => `${isActive ? 'border-b-3 transition-all duration-300 ease-in-out border-white' : 'text-amber-300'} cursor-pointer`}>Products</NavLink>
@@ -49,7 +80,7 @@ const Navbar = ({ location, getLocation, openDropdown, setOpenDropdown }) => {
             <ShoppingCartIcon className="h-7 w-7" />
             <span className="absolute -top-2 -right-2 bg-gradient-to-r from-yellow-500 to-orange-400 text-white text-xs font-bold rounded-full px-1">{cartItem.length}</span>
           </Link>
-          <div>
+          <div className='hidden md:block'>
             <SignedOut>
               <SignInButton className=" bg-gradient-to-r from-orange-500 to-yellow-400 text-white rounded-full px-4 py-2 cursor-pointer" />
             </SignedOut>
@@ -58,8 +89,8 @@ const Navbar = ({ location, getLocation, openDropdown, setOpenDropdown }) => {
             </SignedIn>
           </div>
         </nav>
-
       </div>
+      <ResponsiveMenu openNav={openNav} setOpenNav={setOpenNav}/>
     </div>
   )
 }

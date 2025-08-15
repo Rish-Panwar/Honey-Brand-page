@@ -6,7 +6,7 @@ const FilterSection = ({ filters, updateFilter }) => {
   const { search, category, priceRange } = filters;
 
   return (
-    <div className='bg-amber-100 mt-10 p-4  rounded-md h-max'>
+    <div className='bg-amber-100 mt-10 p-4  rounded-md h-max hidden md:block'>
       {/* Serach section */}
       <input type="text" placeholder='Search..' value={search} onChange={(e) => updateFilter('search', e.target.value)} className='bg-white rounded-md p-2 border-gray-400 border-2' />
 

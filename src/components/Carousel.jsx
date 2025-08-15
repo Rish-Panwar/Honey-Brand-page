@@ -40,12 +40,12 @@ const Carousel = () => {
               key={index}
               className="w-full bg-gradient-to-r from-amber-100 via-yellow-200 to-amber-100 -z-10 h-dvh"
             >
-              <div className="flex gap-10 justify-center min-h-[60vh] md:min-h-[70vh] items-center px-4">
-                <div className="space-y-4">
-                  <h3 className="text-white-500 font-semibold font-sans text-sm">
+              <div className="flex flex-col md:flex-row  gap-10 justify-center min-h-[60vh] md:min-h-[70vh] items-center px-4 my-10 md:my-0">
+                <div className="md:space-y-4 space-y-2">
+                  <h3 className="text-[#EB5B00] font-semibold font-sans text-sm">
                     Golden Goodness in Every Drop
                   </h3>
-                  <h1 className="text-4xl font-bold uppercase line-clamp-2 md:w-[500px] text-[#B86B00] text-shadow-white">
+                  <h1 className="text-xl md:text-4xl font-bold uppercase line-clamp-3 md:line-clamp-2 md:w-[500px] text-[#B86B00] text-shadow-white">
                     {item.title}
                   </h1>
                   <p className="md:w-[500px] line-clamp-3 text-gray-400 pr-7">
@@ -72,7 +72,6 @@ const Carousel = () => {
           );
         })}
       </Slider>
-      {/* <Category/> */}
     </div>
   );
 };

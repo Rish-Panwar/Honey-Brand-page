@@ -4,7 +4,8 @@ import FilterSection from "../components/FilterSection";
 import ProductCard from "../components/ProductCard";
 import Pagination from "../components/Pagination";
 import Lottie from "lottie-react";
-import notfound from "../assets/notfound.json"
+import plantloader from "../assets/plantloader.json"
+import MobileFilterDrawer from "../components/MobileFilterDrawer";
 const Products = () => {
   const { data, fetchAllData } = getData() || {};
 
@@ -35,6 +36,7 @@ const Products = () => {
   const [page, setPage] = useState(1)
   const pageHandler = (selectedPage) => {
     setPage(selectedPage)
+    window.scrollTo(0, 0)
   }
   const dynamicPage = Math.ceil(filteredData?.length / 8)
   useEffect(() => {
@@ -47,12 +49,13 @@ const Products = () => {
   return (
     <div>
       <div className="max-w-6xl mx-auto px-4 mb-10">
+  <MobileFilterDrawer filters={filters} updateFilter={updateFilter} />
         {allProducts.length > 0 ? (
           <div className="flex gap-8">
             <FilterSection filters={filters} updateFilter={updateFilter} />
             <div className="flex flex-col items-center justify-between mt-10 w-full">
               {/* Product Grid */}
-              <div className="grid grid-cols-4 gap-7 bg-amber-100 w-full">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-7 bg-amber-100">
                 {filteredData?.slice(page * 8 - 8, page * 8).map((product, index) => (
                   <ProductCard key={index} product={product} />
                 ))}
@@ -68,7 +71,8 @@ const Products = () => {
           </div>
         ) : (
           <div className="flex items-center justify-center md:h-[600px] md:w-[900px] mt-10">
-            <Lottie animationData={notfound} classID="w-[500px]" />          
+            <p className="text-gray-500 text-xl">Loading</p>
+            <Lottie animationData={plantloader} classID=" flex justify-center items-center w-[300px] h-[300px] m-1" autoPlay loop muted playsInline />          
           </div>
         )}
       </div>
