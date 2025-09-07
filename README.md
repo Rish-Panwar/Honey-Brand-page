@@ -1,12 +1,34 @@
-# React + Vite
+# 🍯 Golden Drop – Organic Honey Store  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Golden Drop is a modern **e-commerce website** for selling organic honey and related products.  
+Built with **React, Vite, and Tailwind CSS**, it provides a smooth shopping experience with filters, dynamic product pages, cart, and checkout.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack  
 
-## Expanding the ESLint configuration
+- **Frontend**: [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)  
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)  
+- **UI Components**: [Radix UI](https://www.radix-ui.com/), [Lucide Icons](https://lucide.dev/), [React Icons](https://react-icons.github.io/react-icons/)  
+- **Auth**: [Clerk](https://clerk.dev/)  
+- **Data Fetching**: [Axios](https://axios-http.com/)  
+- **Carousel/Slider**: Keen Slider, React Slick  
+- **Animations**: Motion, Lottie  
+- **Hosting**: [Vercel](https://vercel.com/)  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Features  
+
+- ✅ Fully **responsive design** (mobile-first)  
+- ✅ Dynamic **product categories**: Honey Products, Food Products, Accessories  
+- ✅ **Quantity selector** with price logic:  
+  - Honey → 250g, 500g, 1kg  
+  - Food & Accessories → Units (1–5)  
+- ✅ **Cart system** with add/remove/update  
+- ✅ **Filter section** (search, category, price range)  
+- ✅ **Authentication** with Clerk  
+- ✅ **Animations** (Lottie, Motion, transitions)  
+- ✅ Optimized & deployed on Vercel  
+
+---
